@@ -1,0 +1,114 @@
+@use 'sass:color';
+
+// ========================================
+// 🎨 Design Tokens — Inspire Checkout
+// ========================================
+
+// ----------------------
+// 🌈 Colors
+// ----------------------
+
+$color-primary: #0094ff; // Inspire blue (buttons, highlights)
+$color-primary-hover: color.adjust($color-primary, $lightness: -6%, $space: hsl);
+$color-primary-light: #e5f4ff;
+
+$color-success: #22c55e; // green check icons
+$color-error: #ef4444; // red input error states
+$color-error-bg: #ffeaea;
+
+$color-bg: #ffffff;
+$color-surface: #f9f9f9; // card and section backgrounds
+$color-border: #e0e0e0; // input, card, and container borders
+$color-divider: #f2f2f2;
+$color-disabled: #cccccc;
+
+$color-text-primary: #111827; // strong text
+$color-text-secondary: #4b5563; // placeholder, secondary labels
+$color-text-tertiary: #9ca3af;
+$color-text-inverse: #ffffff;
+
+// ----------------------
+// ✍️ Typography
+// ----------------------
+
+$font-family-base: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-size-base: 1rem; // 16px
+$font-size-sm: 0.875rem; // 14px
+$font-size-lg: 1.125rem; // 18px
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$line-height-base: 1.5;
+
+// ----------------------
+// 📦 Spacing
+// ----------------------
+
+$spacing-xxs: 0.25rem; // 4px
+$spacing-xs: 0.5rem; // 8px
+$spacing-sm: 0.75rem; // 12px
+$spacing-md: 1rem; // 16px
+$spacing-lg: 1.5rem; // 24px
+$spacing-xl: 2rem; // 32px
+$spacing-xxl: 3rem; // 48px
+
+// ----------------------
+// 🧱 Border Radius
+// ----------------------
+
+$radius-sm: 4px;
+$radius-md: 6px;
+$radius-lg: 10px;
+
+// ----------------------
+// 🧭 Shadows
+// ----------------------
+
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 2px 4px rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+// ----------------------
+// ⚙️ Transitions
+// ----------------------
+
+$transition-base: all 0.2s ease-in-out;
+$transition-fast: all 0.1s ease-in-out;
+
+// ----------------------
+// 🧩 Component Tokens
+// ----------------------
+
+// Inputs
+$input-bg: $color-bg;
+$input-border: $color-border;
+$input-border-focus: $color-primary;
+$input-border-error: $color-error;
+$input-text: $color-text-primary;
+$input-placeholder: $color-text-secondary;
+
+// Buttons
+$button-bg: $color-primary;
+$button-bg-hover: $color-primary-hover;
+$button-text: $color-text-inverse;
+
+// Cards / Containers
+$card-bg: $color-bg;
+$card-border: $color-border;
+$card-shadow: $shadow-sm;
+
+// Alerts
+$alert-success-bg: color.adjust($color-success, $lightness: 45%, $space: hsl);
+$alert-error-bg: color.adjust($color-error, $lightness: 45%, $space: hsl);
+
+// ----------------------
+// 🧾 Z-index scale
+// ----------------------
+
+$z-header: 100;
+$z-modal: 1000;
+$z-overlay: 1100;
+$z-toast: 1200;

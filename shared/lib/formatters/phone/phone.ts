@@ -4,7 +4,7 @@ import { unmask } from '../common/unmask';
  * Formats phone number: +55 (11) 98960-1225 or (11) 98960-1225
  */
 export function formatPhone(value: string): string {
-  const digits = unmask(value);
+  const digits = unmask(value).slice(0, 15);
   if (digits.length === 0) return '';
 
   // International format (starts with 55)

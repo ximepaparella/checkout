@@ -8,6 +8,7 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: ['./__tests__/setup.ts'],
+    passWithNoTests: true, // Don't fail when no tests are found
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],

@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // ========================================
 // 🎨 Design Tokens — Inspire Checkout
 // ========================================
@@ -7,7 +9,7 @@
 // ----------------------
 
 $color-primary: #0094ff; // Inspire blue (buttons, highlights)
-$color-primary-hover: darken($color-primary, 6%);
+$color-primary-hover: color.adjust($color-primary, $lightness: -6%, $space: hsl);
 $color-primary-light: #e5f4ff;
 
 $color-success: #22c55e; // green check icons
@@ -99,8 +101,8 @@ $card-border: $color-border;
 $card-shadow: $shadow-sm;
 
 // Alerts
-$alert-success-bg: lighten($color-success, 45%);
-$alert-error-bg: lighten($color-error, 45%);
+$alert-success-bg: color.adjust($color-success, $lightness: 45%, $space: hsl);
+$alert-error-bg: color.adjust($color-error, $lightness: 45%, $space: hsl);
 
 // ----------------------
 // 🧾 Z-index scale

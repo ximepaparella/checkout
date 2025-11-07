@@ -15,6 +15,42 @@
   color: $color-text-primary;
 }
 
+@mixin font-12 {
+  font-size: $font-size-12;
+  line-height: $line-height-base;
+}
+
+@mixin font-16 {
+  font-size: $font-size-16;
+  line-height: $line-height-base;
+}
+
+@mixin font-18 {
+  font-size: $font-size-18;
+  line-height: $line-height-base;
+}
+
+@mixin font-22 {
+  font-size: $font-size-22;
+  line-height: $line-height-base;
+}
+
+@mixin font-24 {
+  font-size: $font-size-24;
+  line-height: $line-height-base;
+}
+
+@mixin font-28 {
+  font-size: $font-size-28;
+  line-height: $line-height-base;
+}
+
+@mixin font-32 {
+  font-size: $font-size-32;
+  line-height: $line-height-base;
+}
+
+// Legacy aliases
 @mixin font-sm {
   font-size: $font-size-sm;
   line-height: $line-height-base;
@@ -67,6 +103,14 @@
 
 @function spacing($size) {
   $spacing-map: (
+    '4': $spacing-4,
+    '8': $spacing-8,
+    '12': $spacing-12,
+    '16': $spacing-16,
+    '24': $spacing-24,
+    '32': $spacing-32,
+    '48': $spacing-48,
+    // Legacy aliases
     'xxs': $spacing-xxs,
     'xs': $spacing-xs,
     'sm': $spacing-sm,
@@ -76,6 +120,16 @@
     'xxl': $spacing-xxl,
   );
   @return map-get($spacing-map, $size);
+}
+
+// ----------------------
+// 🎨 Input Icons
+// ----------------------
+
+@mixin input-icon {
+  width: $input-icon-size;
+  height: $input-icon-size;
+  flex-shrink: 0;
 }
 
 // ----------------------

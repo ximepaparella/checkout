@@ -1,0 +1,127 @@
+@import '@/styles/tokens';
+@import '@/styles/mixins';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: spacing('4');
+}
+
+.wrapperFullWidth {
+  width: 100%;
+}
+
+.label {
+  @include font-weight-medium;
+  @include font-16;
+  @include text-primary;
+  display: block;
+  margin-bottom: spacing('4');
+}
+
+.required {
+  color: $color-error;
+}
+
+.optional {
+  @include font-weight-regular;
+  @include text-secondary;
+  @include font-12;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  @include input-base;
+  width: 100%;
+  padding: spacing('12') spacing('16');
+  @include font-16;
+  @include radius-sm;
+  line-height: $line-height-base;
+
+  &::placeholder {
+    color: $input-placeholder;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $input-border-focus;
+    @include focus-ring;
+  }
+
+  &:disabled {
+    background-color: $color-surface;
+    border-color: $color-disabled;
+    color: $color-text-tertiary;
+    cursor: not-allowed;
+  }
+}
+
+.inputError {
+  @include input-error;
+  padding-right: calc(spacing('16') + $input-icon-size + spacing('12'));
+}
+
+.inputSuccess {
+  @include input-success;
+  padding-right: calc(spacing('16') + $input-icon-size + spacing('12'));
+}
+
+.inputDisabled {
+  cursor: not-allowed;
+}
+
+.inputFullWidth {
+  width: 100%;
+}
+
+.errorIcon,
+.successIcon {
+  position: absolute;
+  right: spacing('12');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.errorMessage {
+  @include font-12;
+  color: $input-error-text;
+  display: block;
+  margin-top: spacing('4');
+}
+
+.helperText {
+  @include font-12;
+  @include text-secondary;
+  display: flex;
+  align-items: center;
+  gap: spacing('8');
+  margin-top: spacing('4');
+}
+
+.helperLink {
+  @include font-12;
+  color: $color-primary;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  @include transition-base;
+
+  &:hover {
+    color: $color-primary-hover;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+    @include radius-sm;
+  }
+}

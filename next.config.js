@@ -11,6 +11,13 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
+  experimental: {
+    optimizeCss: true, // Enable CSS optimization
+  },
+  // Inline critical CSS
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
 };
 
 module.exports = nextConfig;

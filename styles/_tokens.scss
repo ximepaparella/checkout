@@ -32,9 +32,20 @@ $color-text-inverse: #ffffff;
 // ----------------------
 
 $font-family-base: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-size-base: 1rem; // 16px
-$font-size-sm: 0.875rem; // 14px
-$font-size-lg: 1.125rem; // 18px
+
+// Font sizes (in rem, base 16px)
+$font-size-12: 0.75rem; // 12px
+$font-size-16: 1rem; // 16px (base)
+$font-size-18: 1.125rem; // 18px
+$font-size-22: 1.375rem; // 22px
+$font-size-24: 1.5rem; // 24px
+$font-size-28: 1.75rem; // 28px
+$font-size-32: 2rem; // 32px
+
+// Legacy aliases for backward compatibility
+$font-size-base: $font-size-16;
+$font-size-sm: $font-size-12;
+$font-size-lg: $font-size-18;
 
 $font-weight-regular: 400;
 $font-weight-medium: 500;
@@ -47,13 +58,22 @@ $line-height-base: 1.5;
 // 📦 Spacing
 // ----------------------
 
-$spacing-xxs: 0.25rem; // 4px
-$spacing-xs: 0.5rem; // 8px
-$spacing-sm: 0.75rem; // 12px
-$spacing-md: 1rem; // 16px
-$spacing-lg: 1.5rem; // 24px
-$spacing-xl: 2rem; // 32px
-$spacing-xxl: 3rem; // 48px
+$spacing-4: 0.25rem; // 4px
+$spacing-8: 0.5rem; // 8px
+$spacing-12: 0.75rem; // 12px
+$spacing-16: 1rem; // 16px
+$spacing-24: 1.5rem; // 24px
+$spacing-32: 2rem; // 32px
+$spacing-48: 3rem; // 48px
+
+// Legacy aliases for backward compatibility
+$spacing-xxs: $spacing-4;
+$spacing-xs: $spacing-8;
+$spacing-sm: $spacing-12;
+$spacing-md: $spacing-16;
+$spacing-lg: $spacing-24;
+$spacing-xl: $spacing-32;
+$spacing-xxl: $spacing-48;
 
 // ----------------------
 // 🧱 Border Radius
@@ -89,6 +109,9 @@ $input-border-focus: $color-primary;
 $input-border-error: $color-error;
 $input-text: $color-text-primary;
 $input-placeholder: $color-text-secondary;
+$input-border-success: $color-success;
+$input-icon-size: 20px; // For error/success icons
+$input-icon-spacing: spacing('12'); // Space between input and icon
 
 // Buttons
 $button-bg: $color-primary;
@@ -103,6 +126,20 @@ $card-shadow: $shadow-sm;
 // Alerts
 $alert-success-bg: color.adjust($color-success, $lightness: 45%, $space: hsl);
 $alert-error-bg: color.adjust($color-error, $lightness: 45%, $space: hsl);
+
+// Error message
+$input-error-text: $color-error;
+$input-error-font-size: $font-size-12;
+
+// Helper text
+$input-helper-text: $color-text-secondary;
+$input-helper-font-size: $font-size-12;
+
+// ----------------------
+// 📐 Layout
+// ----------------------
+
+$container-max-width: 1200px;
 
 // ----------------------
 // 🧾 Z-index scale

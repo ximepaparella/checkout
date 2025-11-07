@@ -38,6 +38,10 @@ describe('Header', () => {
 
     const logoText = screen.getByText('Inspire');
     expect(logoText).toBeInTheDocument();
+
+    // Logo image should have empty alt text (decorative)
+    const logoImage = screen.getByAltText('');
+    expect(logoImage).toBeInTheDocument();
   });
 
   it('renders the security badge', () => {

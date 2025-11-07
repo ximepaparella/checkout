@@ -13,16 +13,16 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: $container-max-width;
   margin: 0 auto;
-  padding: 0 spacing('lg');
+  padding: 0 spacing('24');
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: spacing('lg');
+  gap: spacing('24');
 
   @include mobile {
-    padding: 0 spacing('md');
+    padding: 0 spacing('16');
   }
 }
 
@@ -30,7 +30,7 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: spacing('xs');
+  gap: spacing('8');
   text-decoration: none;
   @include transition-base;
 
@@ -51,7 +51,7 @@
 
 .logoText {
   @include font-weight-bold;
-  @include font-lg;
+  @include font-18;
   color: $color-primary;
   line-height: 1;
 }
@@ -60,16 +60,16 @@
 .securityBadge {
   display: flex;
   align-items: center;
-  gap: spacing('sm');
+  gap: spacing('12');
   background-color: $color-surface;
   border: 1px solid $color-border;
-  padding: spacing('sm') spacing('md');
+  padding: spacing('12') spacing('16');
   @include radius-md;
   @include shadow-sm;
 
   @include mobile {
-    padding: spacing('xs') spacing('sm');
-    gap: spacing('xs');
+    padding: spacing('8') spacing('12');
+    gap: spacing('8');
   }
 }
 
@@ -83,33 +83,33 @@
 .badgeText {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: spacing('4');
 
   @include mobile {
-    gap: 1px;
+    gap: spacing('4');
   }
 }
 
 .badgeTitle {
   @include font-weight-semibold;
-  @include font-sm;
+  @include font-12;
   color: $color-text-primary;
   line-height: 1.2;
   white-space: nowrap;
 
   @include mobile {
-    font-size: 0.75rem;
+    @include font-12;
   }
 }
 
 .badgeSubtitle {
   @include font-weight-regular;
-  font-size: 0.6875rem; // 11px
+  @include font-12;
   color: $color-text-secondary;
   line-height: 1.2;
   white-space: nowrap;
 
   @include mobile {
-    font-size: 0.625rem; // 10px
+    @include font-12;
   }
 }

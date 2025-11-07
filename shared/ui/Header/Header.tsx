@@ -1,16 +1,19 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { getHeaderText } from '@/shared/constants/header';
 import styles from './Header.module.scss';
 
 export function Header() {
+  const text = getHeaderText();
+
   return (
     <header className={styles.header} role="banner">
       <div className={styles.container}>
         {/* Logo */}
-        <Link href="/" className={styles.logo} aria-label="Inspire - Ir para página inicial">
+        <Link href="/" className={styles.logo} aria-label={text.logoAriaLabel}>
           <Image
             src="/logo.svg"
-            alt="Inspire"
+            alt=""
             width={120}
             height={32}
             priority
@@ -20,7 +23,11 @@ export function Header() {
         </Link>
 
         {/* Security Badge */}
-        <div className={styles.securityBadge} role="complementary" aria-label="Compra segura">
+        <div
+          className={styles.securityBadge}
+          role="complementary"
+          aria-label={text.securityAriaLabel}
+        >
           <div className={styles.shieldIcon} aria-hidden="true">
             <svg
               width="24"
@@ -43,8 +50,8 @@ export function Header() {
             </svg>
           </div>
           <div className={styles.badgeText}>
-            <span className={styles.badgeTitle}>COMPRA SEGURA</span>
-            <span className={styles.badgeSubtitle}>100% PROTEGIDO</span>
+            <span className={styles.badgeTitle}>{text.securityTitle}</span>
+            <span className={styles.badgeSubtitle}>{text.securitySubtitle}</span>
           </div>
         </div>
       </div>

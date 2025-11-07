@@ -123,6 +123,16 @@
 }
 
 // ----------------------
+// 🎨 Input Icons
+// ----------------------
+
+@mixin input-icon {
+  width: $input-icon-size;
+  height: $input-icon-size;
+  flex-shrink: 0;
+}
+
+// ----------------------
 // 🧱 Border Radius Mixins
 // ----------------------
 

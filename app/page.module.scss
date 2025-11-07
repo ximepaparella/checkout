@@ -1,0 +1,99 @@
+@import '@/styles/tokens';
+@import '@/styles/mixins';
+
+.main {
+  min-height: 100vh;
+  background-color: $color-bg;
+  padding: spacing('24') 0;
+}
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 spacing('16');
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: spacing('32');
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: spacing('32');
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: spacing('16');
+}
+
+.sectionTitle {
+  @include font-weight-semibold;
+  @include font-18;
+  @include text-primary;
+  margin-bottom: spacing('8');
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: spacing('16');
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  gap: spacing('8');
+  padding-top: spacing('24'); // Align with input label
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: $color-primary;
+}
+
+.checkboxLabel {
+  @include font-16;
+  @include text-primary;
+  cursor: pointer;
+  user-select: none;
+}
+
+.summarySection {
+  @include mobile {
+    order: -1; // Show summary first on mobile
+  }
+}
+
+.summaryCard {
+  @include card-base;
+  padding: spacing('24');
+  position: sticky;
+  top: spacing('24');
+}
+
+.summaryTitle {
+  @include font-weight-semibold;
+  @include font-18;
+  @include text-primary;
+  margin-bottom: spacing('16');
+}
+
+.summaryPlaceholder {
+  @include font-16;
+  @include text-secondary;
+}

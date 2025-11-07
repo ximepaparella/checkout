@@ -109,6 +109,9 @@ $input-border-focus: $color-primary;
 $input-border-error: $color-error;
 $input-text: $color-text-primary;
 $input-placeholder: $color-text-secondary;
+$input-border-success: $color-success;
+$input-icon-size: 20px; // For error/success icons
+$input-icon-spacing: spacing('12'); // Space between input and icon
 
 // Buttons
 $button-bg: $color-primary;
@@ -123,6 +126,14 @@ $card-shadow: $shadow-sm;
 // Alerts
 $alert-success-bg: color.adjust($color-success, $lightness: 45%, $space: hsl);
 $alert-error-bg: color.adjust($color-error, $lightness: 45%, $space: hsl);
+
+// Error message
+$input-error-text: $color-error;
+$input-error-font-size: $font-size-12;
+
+// Helper text
+$input-helper-text: $color-text-secondary;
+$input-helper-font-size: $font-size-12;
 
 // ----------------------
 // 📐 Layout

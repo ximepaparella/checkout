@@ -1,0 +1,115 @@
+@import '@/styles/tokens';
+@import '@/styles/mixins';
+
+.header {
+  width: 100%;
+  background-color: $color-bg;
+  border-bottom: 1px solid $color-border;
+  padding: spacing('md') 0;
+  position: sticky;
+  top: 0;
+  z-index: $z-header;
+  @include shadow-sm;
+}
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 spacing('24');
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: spacing('24');
+
+  @include mobile {
+    padding: 0 spacing('16');
+  }
+}
+
+// Logo
+.logo {
+  display: flex;
+  align-items: center;
+  gap: spacing('8');
+  text-decoration: none;
+  @include transition-base;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+    @include radius-md;
+  }
+}
+
+.logoImage {
+  height: 32px;
+  width: auto;
+}
+
+.logoText {
+  @include font-weight-bold;
+  @include font-18;
+  color: $color-primary;
+  line-height: 1;
+}
+
+// Security Badge
+.securityBadge {
+  display: flex;
+  align-items: center;
+  gap: spacing('12');
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  padding: spacing('12') spacing('16');
+  @include radius-md;
+  @include shadow-sm;
+
+  @include mobile {
+    padding: spacing('8') spacing('12');
+    gap: spacing('8');
+  }
+}
+
+.shieldIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.badgeText {
+  display: flex;
+  flex-direction: column;
+  gap: spacing('4');
+
+  @include mobile {
+    gap: spacing('4');
+  }
+}
+
+.badgeTitle {
+  @include font-weight-semibold;
+  @include font-12;
+  color: $color-text-primary;
+  line-height: 1.2;
+  white-space: nowrap;
+
+  @include mobile {
+    @include font-12;
+  }
+}
+
+.badgeSubtitle {
+  @include font-weight-regular;
+  @include font-12;
+  color: $color-text-secondary;
+  line-height: 1.2;
+  white-space: nowrap;
+
+  @include mobile {
+    @include font-12;
+  }
+}

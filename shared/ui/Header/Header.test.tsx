@@ -70,8 +70,11 @@ describe('Header', () => {
   it('renders logo image with correct attributes', () => {
     render(<Header />);
 
-    const logoImage = screen.getByAltText('Inspire');
+    // Logo image should have empty alt text (decorative image with visible text)
+    const logoImage = screen.getByAltText('');
     expect(logoImage).toBeInTheDocument();
     expect(logoImage).toHaveAttribute('src', '/logo.svg');
+    expect(logoImage).toHaveAttribute('width', '120');
+    expect(logoImage).toHaveAttribute('height', '32');
   });
 });

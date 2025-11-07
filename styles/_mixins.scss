@@ -1,0 +1,243 @@
+// ========================================
+// 🛠️ Sass Mixins — Inspire Checkout
+// ========================================
+
+@import './tokens';
+
+// ----------------------
+// 📝 Typography Mixins
+// ----------------------
+
+@mixin font-base {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $color-text-primary;
+}
+
+@mixin font-sm {
+  font-size: $font-size-sm;
+  line-height: $line-height-base;
+}
+
+@mixin font-lg {
+  font-size: $font-size-lg;
+  line-height: $line-height-base;
+}
+
+@mixin font-weight-regular {
+  font-weight: $font-weight-regular;
+}
+
+@mixin font-weight-medium {
+  font-weight: $font-weight-medium;
+}
+
+@mixin font-weight-semibold {
+  font-weight: $font-weight-semibold;
+}
+
+@mixin font-weight-bold {
+  font-weight: $font-weight-bold;
+}
+
+// ----------------------
+// 🎨 Color Mixins
+// ----------------------
+
+@mixin text-primary {
+  color: $color-text-primary;
+}
+
+@mixin text-secondary {
+  color: $color-text-secondary;
+}
+
+@mixin text-tertiary {
+  color: $color-text-tertiary;
+}
+
+@mixin text-inverse {
+  color: $color-text-inverse;
+}
+
+// ----------------------
+// 📦 Spacing Mixins
+// ----------------------
+
+@function spacing($size) {
+  $spacing-map: (
+    'xxs': $spacing-xxs,
+    'xs': $spacing-xs,
+    'sm': $spacing-sm,
+    'md': $spacing-md,
+    'lg': $spacing-lg,
+    'xl': $spacing-xl,
+    'xxl': $spacing-xxl,
+  );
+  @return map-get($spacing-map, $size);
+}
+
+// ----------------------
+// 🧱 Border Radius Mixins
+// ----------------------
+
+@mixin radius-sm {
+  border-radius: $radius-sm;
+}
+
+@mixin radius-md {
+  border-radius: $radius-md;
+}
+
+@mixin radius-lg {
+  border-radius: $radius-lg;
+}
+
+// ----------------------
+// 🧭 Shadow Mixins
+// ----------------------
+
+@mixin shadow-sm {
+  box-shadow: $shadow-sm;
+}
+
+@mixin shadow-md {
+  box-shadow: $shadow-md;
+}
+
+@mixin shadow-lg {
+  box-shadow: $shadow-lg;
+}
+
+// ----------------------
+// ⚙️ Transition Mixins
+// ----------------------
+
+@mixin transition-base {
+  transition: $transition-base;
+}
+
+@mixin transition-fast {
+  transition: $transition-fast;
+}
+
+// ----------------------
+// 🎯 Focus States
+// ----------------------
+
+@mixin focus-ring {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+}
+
+@mixin focus-ring-error {
+  outline: 2px solid $color-error;
+  outline-offset: 2px;
+}
+
+// ----------------------
+// 📱 Responsive Mixins
+// ----------------------
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+// ----------------------
+// 🎨 Input States
+// ----------------------
+
+@mixin input-base {
+  background-color: $input-bg;
+  border: 1px solid $input-border;
+  color: $input-text;
+  @include transition-base;
+
+  &::placeholder {
+    color: $input-placeholder;
+  }
+
+  &:focus {
+    border-color: $input-border-focus;
+    @include focus-ring;
+  }
+
+  &:disabled {
+    background-color: $color-surface;
+    border-color: $color-disabled;
+    color: $color-text-tertiary;
+    cursor: not-allowed;
+  }
+}
+
+@mixin input-error {
+  border-color: $input-border-error;
+  background-color: $color-error-bg;
+
+  &:focus {
+    @include focus-ring-error;
+  }
+}
+
+@mixin input-success {
+  border-color: $color-success;
+}
+
+// ----------------------
+// 🔘 Button Base
+// ----------------------
+
+@mixin button-base {
+  @include font-weight-medium;
+  @include transition-base;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+@mixin button-primary {
+  background-color: $button-bg;
+  color: $button-text;
+
+  &:hover:not(:disabled) {
+    background-color: $button-bg-hover;
+  }
+}
+
+// ----------------------
+// 🃏 Card Base
+// ----------------------
+
+@mixin card-base {
+  background-color: $card-bg;
+  border: 1px solid $card-border;
+  @include shadow-sm;
+  @include radius-md;
+}

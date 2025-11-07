@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Input } from '@/shared/ui/Input';
-import { formatCPF, formatPhone, formatCEP } from '@/shared/lib/formatters/inputFormatters';
+import { formatCPF, formatPhone, formatCEP } from '@/shared/lib/formatters';
 import styles from './page.module.scss';
 
 export default function CheckoutPage() {

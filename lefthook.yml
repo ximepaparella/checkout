@@ -9,3 +9,5 @@ pre-commit:
       stage_fixed: true
     typecheck:
       run: pnpm typecheck
+    test:
+      run: pnpm test

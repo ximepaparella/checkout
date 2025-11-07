@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Header } from '@/shared/ui/Header';
+import { ErrorBoundaryWrapper } from './error-boundary-wrapper';
 import '../styles/globals.scss';
 
 export const metadata: Metadata = {
@@ -71,10 +72,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
-        <Header />
-        <main id="main-content" role="main">
-          {children}
-        </main>
+        <ErrorBoundaryWrapper>
+          <Header />
+          <main id="main-content" role="main">
+            {children}
+          </main>
+        </ErrorBoundaryWrapper>
       </body>
     </html>
   );

@@ -46,7 +46,8 @@ describe('Input', () => {
 
   it('does not show success icon when error exists', () => {
     const { container } = render(<Input success error="Error" />);
-    const icons = container.querySelectorAll('[aria-hidden="true"]');
+    // Check for SVG icons specifically (Icon component renders SVG)
+    const icons = container.querySelectorAll('svg[aria-hidden="true"]');
     expect(icons.length).toBe(1); // Only error icon
   });
 
@@ -55,12 +56,19 @@ describe('Input', () => {
     expect(screen.getByText('Helper text')).toBeInTheDocument();
   });
 
-  it('handles helper link', async () => {
+  it('handles helper link with onClick', async () => {
     const handleClick = vi.fn();
     render(<Input helperLink={{ text: 'Click me', onClick: handleClick }} />);
-    const link = screen.getByText('Click me');
-    await userEvent.click(link);
+    const button = screen.getByText('Click me');
+    await userEvent.click(button);
     expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('handles helper link with href', () => {
+    render(<Input helperLink={{ text: 'Learn more', href: '/help' }} />);
+    const link = screen.getByText('Learn more');
+    expect(link).toHaveAttribute('href', '/help');
+    expect(link.tagName).toBe('A');
   });
 
   it('applies error state styles', () => {

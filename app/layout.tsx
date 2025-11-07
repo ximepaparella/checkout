@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description: 'Finalize sua compra de forma segura e rápida na Inspire. Compra 100% protegida.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.svg',
         width: 1200,
         height: 630,
         alt: 'Inspire Checkout',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Checkout | Inspire',
     description: 'Finalize sua compra de forma segura e rápida na Inspire. Compra 100% protegida.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.svg'],
   },
   robots: {
     index: true,
@@ -63,7 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR">
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0094ff" />

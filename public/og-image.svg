@@ -1,0 +1,10 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0094ff"/>
+  <g transform="translate(600, 315)">
+    <circle r="150" fill="white" opacity="0.2"/>
+    <path d="M-60 -60L60 -60L60 60L-60 60Z" fill="white" opacity="0.9"/>
+    <text x="0" y="10" text-anchor="middle" fill="#0094ff" font-family="Arial, sans-serif" font-size="48" font-weight="bold">Inspire</text>
+    <text x="0" y="50" text-anchor="middle" fill="#0094ff" font-family="Arial, sans-serif" font-size="24">Checkout Seguro</text>
+  </g>
+</svg>
+
